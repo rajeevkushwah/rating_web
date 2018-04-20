@@ -1,0 +1,35 @@
+
+       
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row bg-title">
+                  <h3>Users</h3>
+                    
+                </div>
+               <div class="row">
+                <div [ngBusy]="busy"></div>
+                    <div class="col-lg-3 col-md-6" *ngFor="let user of result;let i=index"> 
+                        <div class="white-box"  >
+                            <div class="text-muted" ><span class="m-r-10">{{user.name}}</span> </div>
+                            
+                            <p >{{user.email}}</p>
+                            <p >{{avgRating(user.rate).toFixed(2)}} ({{user.rate.length}})</p>
+                           
+
+                           <rating [(ngModel)]="user.rate1"  (click)="rate(user._id,user.rate1)"                          
+                            >
+                            </rating>
+
+                        </div>
+
+                        
+                    </div>
+                </div>
+              
+
+                <!-- /.right-sidebar -->
+            </div>
+            <!-- /.container-fluid -->
+            <footer class="footer text-center"> 2017 &copy; Elite Admin brought to you by themedesigner.in </footer>
+        </div>
+    
